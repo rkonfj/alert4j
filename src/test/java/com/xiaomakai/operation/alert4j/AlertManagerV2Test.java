@@ -17,7 +17,7 @@ public class AlertManagerV2Test {
 
     @Test
     public void testCreate() {
-        AlertManagerV2 alertManagerV2 = AlertManagerV2.newInstance("http://192.168.0.6:9093");
+        AlertManagerV2 alertManager = new AlertManagerV2("http://192.168.0.6:9093");
 
         PostableAlert alert = new PostableAlert();
         alert.setAnnotations(new HashMap<>());
@@ -27,13 +27,13 @@ public class AlertManagerV2Test {
         Map<String, String> labels = new HashMap<>();
         labels.put("alertname", "任务执行失败");
         alert.setLabels(labels);
-        alertManagerV2.createAlert(Collections.singletonList(alert));
+        alertManager.alertsManager().createAlert(Collections.singletonList(alert));
     }
 
     @Test
     public void testGet() {
-        AlertManagerV2 alertManagerV2 = AlertManagerV2.newInstance("http://192.168.0.6:9093");
-        List<GettableAlert> alerts = alertManagerV2.getAlerts(true, null, null, null, null, null);
+        AlertManagerV2 alertManager = new AlertManagerV2("http://192.168.0.6:9093");
+        List<GettableAlert> alerts = alertManager.alertsManager().getAlerts(true, null, null, null, null, null);
         System.out.println(alerts);
     }
 }
