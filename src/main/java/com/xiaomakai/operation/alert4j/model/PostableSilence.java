@@ -14,11 +14,23 @@ import java.util.List;
 public class PostableSilence {
     private String id;
     private List<Matcher> matchers;
+    /**
+     * required
+     */
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime startsAt;
+    /**
+     * required
+     */
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime endsAt;
+    /**
+     * required
+     */
     private String createdBy;
+    /**
+     * required
+     */
     private String comment;
 
 

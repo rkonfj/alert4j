@@ -13,11 +13,11 @@ import java.util.Map;
 /**
  * @author jingyk
  */
-public class AlertManagerV2Test {
+public class AlertsManagerTest {
 
     @Test
     public void testCreate() {
-        AlertManagerV2 alertManager = new AlertManagerV2("http://192.168.0.6:9093");
+        AlertManagerV2 v2 = new AlertManagerV2("http://10.4.0.55:9093");
 
         PostableAlert alert = new PostableAlert();
         alert.setAnnotations(new HashMap<>());
@@ -27,13 +27,13 @@ public class AlertManagerV2Test {
         Map<String, String> labels = new HashMap<>();
         labels.put("alertname", "任务执行失败");
         alert.setLabels(labels);
-        alertManager.alertsManager().createAlert(Collections.singletonList(alert));
+        v2.alertsManager().createAlert(Collections.singletonList(alert));
     }
 
     @Test
     public void testGet() {
-        AlertManagerV2 alertManager = new AlertManagerV2("http://192.168.0.6:9093");
-        List<GettableAlert> alerts = alertManager.alertsManager().getAlerts(true, null, null, null, null, null);
+        AlertManagerV2 v2 = new AlertManagerV2("http://10.4.0.55:9093");
+        List<GettableAlert> alerts = v2.alertsManager().getAlerts(true, null, null, null, null, null);
         System.out.println(alerts);
     }
 }

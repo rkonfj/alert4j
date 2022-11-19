@@ -33,7 +33,7 @@ public interface SilencesManager {
      * @param silence The silence to create
      * @return Create / update silence response
      */
-    @RequestLine("POST /api/v2/Silences")
+    @RequestLine("POST /api/v2/silences")
     SilenceID createSilence(PostableSilence silence);
 
     /**
