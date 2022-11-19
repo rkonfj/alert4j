@@ -21,3 +21,5 @@ alert2.setEndsAt(LocalDateTime.now());
 // Alert to AlertManager
 v2.alertsManager().createAlerts(Arrays.asList(alert1, alert2));
 ```
+### Contributing
+This is a very early version, and you are very welcome to contribute.
