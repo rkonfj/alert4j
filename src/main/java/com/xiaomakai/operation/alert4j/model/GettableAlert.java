@@ -8,6 +8,7 @@ import java.util.Map;
 
 /**
  * @author jingyk
+ * @see PostableAlert
  */
 @Data
 public class GettableAlert {

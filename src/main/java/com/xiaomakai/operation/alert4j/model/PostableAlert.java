@@ -12,12 +12,24 @@ import java.util.Map;
  */
 @Data
 public class PostableAlert {
+
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime startsAt;
+
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime endsAt;
+
     private Map<String, String> annotations;
+
+    /**
+     * alert labels
+     * required. at least one label
+     */
     private Map<String, String> labels;
+
+    /**
+     * who generate alert
+     */
     private String generatorURL;
 
     public Labels labels() {
